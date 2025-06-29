@@ -1,10 +1,19 @@
 [
   {
     "code": "CY/ATYPICALSHIPPING/1",
-    "name": "Atypicka doprava"
+    "name": "Atypicka doprava",
+    "url": "/atypicka-doprava/",
+    "price": 100,
+    "registeredDiscount": 0.1,
+    "couponEnabled": true
   },
+  
   {
     "code": "CY/WITHDECIMALPRICE",
-    "name": "Cypress product with decimal price"
+    "name": "Cypress product with decimal price",
+    "url": "/cypress-product-with-decimal-price/",
+    "price": 99.99,
+    "registeredDiscount": 0,
+    "couponEnabled": false
   }
 ]

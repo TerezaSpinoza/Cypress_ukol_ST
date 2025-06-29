@@ -1,5 +1,5 @@
 export class LoginPage {
-  loginForm = ()  => cy.get('form[data-testid="formLogin"]').eq(1)  //tady sem si našla form, který pouzdruje ty 3 inputy
+  loginForm = ()  => cy.get('form[data-testid="formLogin"]').eq(1)
   emailInput = () => this.loginForm().find('input[data-testid="inputEmail"]')
   passwordInput = () => this.loginForm().find('input[data-testid="inputPassword"]')
   submitButton = () => this.loginForm().find('button[data-testid="buttonSubmit"]')

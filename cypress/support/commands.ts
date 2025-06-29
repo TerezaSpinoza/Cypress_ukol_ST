@@ -36,10 +36,27 @@
 //   }
 // }
 
-Cypress.Commands.add('login', (email: string, password: string) => {
-  cy.visit('/login');
-  cy.get('[data-testid="inputEmail"]').eq(1).type(email);
-  cy.get('[data-testid="inputPassword"]').eq(1).type(password);
-  cy.get('[data-testid="buttonSubmit"]').click();
-  cy.url().should('include', '/klient');
+//Cypress.Commands.add('login', (email: string, password: string) => {
+  //cy.visit('/login');
+  //cy.get('[data-testid="inputEmail"]').eq(1).type(email);
+  //cy.get('[data-testid="inputPassword"]').eq(1).type(password);
+ // cy.get('[data-testid="buttonSubmit"]').click();
+ // cy.url().should('include', '/klient');
+//});
+
+Cypress.Commands.add('clearCartAndCoupon', () => {
+  cy.visit('/kosik');
+  cy.get('button[data-testid="buttonDeleteItem"]').then(($buttons) => {
+    if ($buttons.length > 0) {
+      cy.wrap($buttons).each(($btn) => {
+        cy.wrap($btn).click();
+      });
+    }
+  });
+  
+  cy.get('body').then(($body) => {
+    if ($body.find('[data-testid="buttonRemoveDiscountCoupon"]').length > 0) {
+      cy.get('[data-testid="buttonRemoveDiscountCoupon"]').click();
+    }
+  });
 });

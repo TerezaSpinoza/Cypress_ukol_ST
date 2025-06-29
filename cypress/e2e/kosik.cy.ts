@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import { LoginPage } from "../pages/loginPage";
 import { ClientPage } from "../pages/clientPage";
-import { SearchPage } from "../pages/searchPage";
+import { SearchPage } from "../pages/productPage";
 import { CartPage } from "../pages/cartPage";
 
 describe('Login page + Cart', () => {
@@ -13,7 +13,7 @@ describe('Login page + Cart', () => {
   const cartPage = new CartPage();
   
 
-  before(() => {
+  beforeEach(() => {
     loginPage.login(email, password);
     clientPage.validatePage();
     });
